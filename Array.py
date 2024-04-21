@@ -20,3 +20,7 @@ def LinearSearch(array,target):
             return i
     return -1
 print(LinearSearch(my_array,3))
+#Remove last Array element by pop method
+my_array.pop()
+print(my_array)
+print(my_array.tolist())
