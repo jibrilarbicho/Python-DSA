@@ -14,3 +14,9 @@ def AccessElement(array,index):
     else:
         print(array[index])
 AccessElement(my_array,2)
+def LinearSearch(array,target):
+    for i in range(len(array)):
+        if array[i]==target:
+            return i
+    return -1
+print(LinearSearch(my_array,3))
