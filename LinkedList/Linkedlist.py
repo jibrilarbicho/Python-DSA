@@ -102,6 +102,23 @@ class LinkedList:
             popedNode.next=None
             self.length-=1
             return popedNode.value
+    def pop(self):
+            popedNode=self.tail
+            if self.length==1:
+                self.head=None
+                self.tail=None
+            else:
+
+
+               temp=self.head
+
+               while  temp.next is not self.tail:
+                   temp=temp.next
+               temp.next=None
+               self.tail=temp
+            self.length-=1
+            return popedNode.value
+
 
         
 
@@ -129,6 +146,8 @@ newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
 newLinkedlist.insert(1,500)
 print(newLinkedlist.pop_first())
+print(newLinkedlist.pop())
+
 # newLinkedlist.traverse()
 # print(newLinkedlist.search(6))
 # print(newLinkedlist.get(-2))
