@@ -88,6 +88,22 @@ class LinkedList:
             return True
         return False
 
+    def pop_first(self):
+        if self.length==0:
+            return "There is no elemnt in Linkedlist"
+        popedNode=self.head
+        if self.length==1:
+            self.head=None
+            self.tail=None
+            self.length-=1
+            return popedNode.value
+        else :
+            self.head=self.head.next
+            popedNode.next=None
+            self.length-=1
+            return popedNode.value
+
+        
 
 
 
@@ -112,6 +128,7 @@ newLinkedlist.prepend(8)
 newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
 newLinkedlist.insert(1,500)
+print(newLinkedlist.pop_first())
 # newLinkedlist.traverse()
 # print(newLinkedlist.search(6))
 # print(newLinkedlist.get(-2))
