@@ -34,6 +34,34 @@ class LinkedList:
            new_node.next = self.head
            self.head = new_node
        self.length += 1
+    def insert(self,index,value):
+        newNode=Node(value)
+        if index < 0 or index > self.length:
+          print("Index out of range")
+          exit(0)
+
+        elif self.length==0:
+            self.head=newNode
+            self.tail=newNode
+
+        elif index==0:
+            newNode.next = self.head
+            self.head=newNode
+        else:
+            tempNode=self.head
+
+            for i in range(index-1):
+               tempNode=tempNode.next
+            newNode.next = tempNode.next
+            tempNode.next=newNode
+        
+        self.length +=1
+
+
+
+
+
+
 
     
 
@@ -51,4 +79,5 @@ newLinkedlist.prepend(7)
 newLinkedlist.prepend(8)
 newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
+newLinkedlist.insert(111,500)
 print(newLinkedlist)
