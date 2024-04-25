@@ -64,6 +64,15 @@ class LinkedList:
         while current:
             print(f"{current.value} {emoji}")
             current=current.next
+    def search(self,target):
+        current=self.head
+        index=0
+        while current:
+            if current.value==target:
+                return f"it is found at index:{index}"
+            current=current.next
+            index+=1
+        return False
 
 
 
@@ -89,4 +98,5 @@ newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
 newLinkedlist.insert(1,500)
 newLinkedlist.traverse()
+print(newLinkedlist.search(6))
 # print(newLinkedlist)
