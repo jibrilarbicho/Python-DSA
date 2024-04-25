@@ -80,7 +80,13 @@ class LinkedList:
           current=self.head
           for _ in range(index):
              current=current.next
-          return current.value
+          return current
+    def set_value(self,index,value):
+        temp=self.get(index)
+        if temp:
+            temp.value=value
+            return True
+        return False
 
 
 
@@ -106,8 +112,9 @@ newLinkedlist.prepend(8)
 newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
 newLinkedlist.insert(1,500)
-newLinkedlist.traverse()
-print(newLinkedlist.search(6))
-print(newLinkedlist.get(-2))
-
-# print(newLinkedlist)
+# newLinkedlist.traverse()
+# print(newLinkedlist.search(6))
+# print(newLinkedlist.get(-2))
+print(newLinkedlist)
+newLinkedlist.set_value(2,456)
+print(newLinkedlist)
