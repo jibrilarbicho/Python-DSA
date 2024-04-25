@@ -56,6 +56,14 @@ class LinkedList:
             tempNode.next=newNode
         
         self.length +=1
+    def traverse(self):
+        current=self.head
+        emoji="🧑‍🦰"
+        #        while current is not None:
+
+        while current:
+            print(f"{current.value} {emoji}")
+            current=current.next
 
 
 
@@ -79,5 +87,6 @@ newLinkedlist.prepend(7)
 newLinkedlist.prepend(8)
 newLinkedlist.prepend(9)
 newLinkedlist.prepend(10)
-newLinkedlist.insert(111,500)
-print(newLinkedlist)
+newLinkedlist.insert(1,500)
+newLinkedlist.traverse()
+# print(newLinkedlist)
