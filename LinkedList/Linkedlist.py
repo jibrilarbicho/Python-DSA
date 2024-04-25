@@ -134,7 +134,13 @@ class LinkedList:
         self.length=0
 
 
-        
+    def find_middle(self):
+      slow = self.head
+      fast = self.head
+      while fast is not None and fast.next is not None:
+          slow = slow.next
+          fast = fast.next.next
+      return slow.value
 
 
 
@@ -169,5 +175,7 @@ print(newLinkedlist.remove(2))
 # print(newLinkedlist.search(6))
 # print(newLinkedlist.get(-2))
 print(newLinkedlist)
+print(newLinkedlist.find_middle())
+
 # newLinkedlist.set_value(2,456)
 print(newLinkedlist)
