@@ -46,7 +46,24 @@ class LinkedList:
           return "The node has been successfullly created"
 
 
+    def traverseCLL(self):
+       if self.head is None: 
+          print("There is no any elemenet for traversal")
+       tempnode=self.head
+      #  while tempnode.next is not self.head:
+      #     print(tempnode.value)
+         
+      #     tempnode=tempnode.next
+      #  print(tempnode.value)
+       while tempnode:
+          print(tempnode.value)
+          tempnode=tempnode.next
+          if tempnode==self.head:
+             break
+          
 
+
+       
 
        
 
@@ -58,4 +75,6 @@ circularSSL.insert(2,1)
 circularSSL.insert(3,1)
 circularSSL.insert(2,2)
 
+
 print([node.value for node  in circularSSL])
+circularSSL.traverseCLL()
