@@ -20,7 +20,7 @@ class LinkedList:
        node.next=node
        self.head=node
        self.tail=node
-    def insert(self,location,nodeValue):
+    def insert(self,nodeValue,location):
         if self.head is None:
           return "The head refernce is None"
         else:
@@ -60,6 +60,19 @@ class LinkedList:
           tempnode=tempnode.next
           if tempnode==self.head:
              break
+    def searchSLL(self,value):
+       if self.head==None:
+          print("There is no any element to search")
+       else:
+          tempNode=self.head
+          while tempNode:
+             if tempNode.value==value:
+                return tempNode.value
+             tempNode=tempNode.next
+            
+             if tempNode==self.tail.next:
+                return "node does not exist "
+
           
 
 
@@ -74,6 +87,7 @@ circularSSL.insert(0,0)
 circularSSL.insert(2,1)
 circularSSL.insert(3,1)
 circularSSL.insert(2,2)
+print(circularSSL.searchSLL(3))
 
 
 print([node.value for node  in circularSSL])
