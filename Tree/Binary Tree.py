@@ -9,11 +9,17 @@ def preOrderTraversal(rootNode):
         print(rootNode.data)
         preOrderTraversal(rootNode.left)
         preOrderTraversal(rootNode.right)
-
+def inOrderTraversal(rootNode):
+     if not rootNode:
+          return
+     inOrderTraversal(rootNode.left)
+     print(rootNode.data)
+     inOrderTraversal(rootNode.right)
     
 newBTreeNode = TreeNode("Drinks")
 Leftchild=TreeNode("Hot")
 Rightchild=TreeNode("Cold")
 newBTreeNode.left=Leftchild
 newBTreeNode.right=Rightchild
-preOrderTraversal(newBTreeNode)
+# preOrderTraversal(newBTreeNode)
+inOrderTraversal(newBTreeNode)
