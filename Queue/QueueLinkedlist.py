@@ -30,6 +30,11 @@ class Queue:
         else:
             self.linkedlist.tail.next = newNode
             self.linkedlist.tail = newNode  # O(1)
+     def isEmpty(self):
+        if self.linkedList.head is None:
+            return True
+        else:
+            return False
 
 
 
