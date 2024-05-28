@@ -18,7 +18,12 @@ def inOrderTraversal(rootNode):
     
 newBTreeNode = TreeNode("Drinks")
 Leftchild=TreeNode("Hot")
+tea=TreeNode("tea")
+coffe=TreeNode("coffe")
+Leftchild.left=tea
+Leftchild.right=coffe
 Rightchild=TreeNode("Cold")
+
 newBTreeNode.left=Leftchild
 newBTreeNode.right=Rightchild
 # preOrderTraversal(newBTreeNode)
