@@ -1,3 +1,7 @@
+import sys
+sys.path.append("/mnt/c9542373-6611-4b24-a6c7-2979563b4e53/Documents/Python-DSA/Queue")
+from QueueLinkedlist import Queue
+
 class TreeNode:
     def __init__(self,data):
        self.data=data
@@ -15,6 +19,21 @@ def inOrderTraversal(rootNode):
      inOrderTraversal(rootNode.left)
      print(rootNode.data)
      inOrderTraversal(rootNode.right)
+def LevelOrderTraversal(rootNode):
+     if not rootNode:
+          return
+     customQueue=Queue()
+     customQueue.enqueue(rootNode)
+     while not customQueue.isEmpty():
+          root=customQueue.dequeue()
+          print(root.data)
+          if not root.left is None:
+               customQueue.enqueue(root.left)
+          if not root.right is None:
+               customQueue.enqueue(root.right)
+
+
+  
     
 newBTreeNode = TreeNode("Drinks")
 Leftchild=TreeNode("Hot")
@@ -27,4 +46,5 @@ Rightchild=TreeNode("Cold")
 newBTreeNode.left=Leftchild
 newBTreeNode.right=Rightchild
 # preOrderTraversal(newBTreeNode)
-inOrderTraversal(newBTreeNode)
+# inOrderTraversal(newBTreeNode)
+LevelOrderTraversal(newBTreeNode)
