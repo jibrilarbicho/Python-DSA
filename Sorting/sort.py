@@ -1,3 +1,5 @@
+import math
+
 def bubbleSort(customList):
     for i in range(len(customList)):
         for j in range(len(customList)-1):
@@ -25,9 +27,31 @@ def insertSort(CustomList):
         CustomList[j+1]=key
         
     return CustomList
+def bucketSort(customList):
+    numberofelemnts=len(customList)
+    numberofbuckets=round(math.sqrt(numberofelemnts))
+    maxValue=max(customList)
+    arr=[]
+    for i in range(numberofbuckets):
+        arr.append([])
+    for j in range(numberofelemnts):
+        index_b=math.ceil(customList[j]*numberofbuckets/maxValue)
+        arr[index_b-1].append(customList[j])
+    for i in range(numberofbuckets):
+        arr[i]=insertSort(arr[i])
+    k=0
+    for i in range(numberofbuckets):
+        for j in range(len(arr[i])):
+            customList[k]=arr[i][j]
+            k+=1
+    return customList
+
+
+
 
 cList=[2,1,7,6,5,3,4,9,8]
 print("bubbleSort",bubbleSort(cList))
 print("selectSort",selectSort(cList))
 print("insertSort",insertSort([8, 4, 6, 2, 9]))
+print("bucketSort",bucketSort([8, 4, 6, 2, 9]))
                  
