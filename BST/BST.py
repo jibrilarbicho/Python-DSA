@@ -39,7 +39,11 @@ class BST:
             return
 
 
-        
+def minValue(bstNode):
+    if bstNode.data==None: return
+    while bstNode.leftChild is not None:
+        bstNode=bstNode.leftChild
+    return bstNode.data    
 nebst=BST(1)
 nebst.insertNode(nebst,2)
 nebst.insertNode(nebst,3)

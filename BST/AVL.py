@@ -19,3 +19,4 @@ class AVL():
                customQueue.enqueue(root.left)
           if not root.right is None:
                customQueue.enqueue(root.right)
+def serach
