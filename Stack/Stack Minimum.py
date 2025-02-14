@@ -21,7 +21,10 @@ class Stack():
         if self.head is None:
             return None
         else:
-            self.minimumNode=self.minimumNode.next
+            if self.head.value==self.minimumNode.value:
+                self.minimumNode=self.minimumNode.next
+
+            
             value=self.head.value
             self.head=self.head.next
             return value
@@ -35,7 +38,13 @@ class Stack():
 stack=Stack()
 stack.push(5)
 stack.push(-200)
-stack.push(8)
+stack.push(3)
+stack.push(2)
+stack.pop()
+stack.push(-1000)
+stack.pop()
+stack.pop()
+stack.pop()
 
 print("Minimum element is", stack.min())
 stack.minnOdes()
