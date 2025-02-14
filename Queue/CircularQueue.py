@@ -28,16 +28,27 @@ class CircularQueue:
         else:
             if self.end==self.maxsize:
                 self.end=0
+                
             else:
                 self.items[self.end] = item
+                print(self.items)
                 self.end+=1
-        return "The elemnt is inserted "
+                return f"The elemnt is inserted {item} "
            
-    def dequeue(self, item):
+    def dequeue(self):
         if self.isEmpty():
             return "Queue is empty"
         else:
-            self.start=+1
+            self.items[self.start]=None
+
+        
+            if self.start==self.maxsize:
+                self.start=0
+            else:
+                self.start+=1
+            
+        
+
 
 
 
@@ -53,8 +64,25 @@ queue=CircularQueue(3)
 queue.enqueue(1)
 queue.enqueue(2)
 queue.enqueue(3)
+
+
+
+queue.dequeue()
 print(queue)
-print(queue.isFull())
+
+queue.dequeue()
+print(queue)
+queue.dequeue()
+print(queue)
+print(queue.enqueue(4))
+print(queue.enqueue(5))
+print(queue)
+
+
+
+
+# print(queue)
+# print(queue.isFull())
 
 # print(queue.items)
 
