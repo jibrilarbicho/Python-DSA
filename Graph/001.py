@@ -36,10 +36,20 @@ class Graph:
     def PrintGraph(self):    
         for vertex in self.graph_dictionary:
             print(vertex,":",self.graph_dictionary[vertex])
+    def removeEdge(self,vertex1,vertex2):
+        if vertex2 not in self.graph_dictionary[vertex1] or vertex1 not in self.graph_dictionary[vertex2]:
+            print("Error: Edge does not exist.")
+        self.graph_dictionary[vertex1].remove(vertex2)
+        self.graph_dictionary[vertex2].remove(vertex1)
 graph=Graph()
 graph.AddVertex("A")
 graph.AddVertex("B")
 graph.AddVertex("C")
 graph.AddVertex("D")
 graph.Addegde("A","B")
+graph.Addegde("A","C")
+graph.Addegde("A","D")
 graph.PrintGraph()
+graph.removeEdge("A","B")
+graph.PrintGraph()
+
