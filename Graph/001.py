@@ -62,6 +62,23 @@ class Graph:
                     visited.append(vertex)
                     queue.append(vertex)
         return visited
+    def DFS(self,vertex):
+        visited=set()
+        Stack=[vertex]
+        while Stack:
+            currentvertex=Stack.pop()
+            if currentvertex not in visited:
+                print(currentvertex)
+                visited.add(currentvertex)
+
+
+            for othervetex in self.graph_dictionary[currentvertex]:
+                if othervetex not in visited:
+                    Stack.append(othervetex)
+        return visited
+        
+
+
     
 
 
@@ -85,9 +102,11 @@ graph.Addegde("E","F")
 graph.Addegde("E","G")
 graph.PrintGraph()
 # graph.removeEdge("A","E")
-graph.PrintGraph()
+# graph.PrintGraph()
 # graph.removevertex("A")
 # print("After removing vertex A")
 graph.PrintGraph()
-print("BFS Traversal",graph.BFS("G"))
+# print("BFS Traversal",graph.BFS("G"))
+print("DFS Traversal",graph.DFS("G"))
+
 
