@@ -51,6 +51,20 @@ class Graph:
             del self.graph_dictionary[vertex]
         else:
             print("Error: Vertex does not exist.")
+
+    def BFS(self,vertex):
+        visited=[vertex]
+        queue=[vertex]
+        while queue:
+            currentvertex=queue.pop(0)
+            for vertex in self.graph_dictionary[currentvertex]:
+                if vertex not in visited:
+                    visited.append(vertex)
+                    queue.append(vertex)
+        return visited
+    
+
+
               
 graph=Graph()
 graph.AddVertex("A")
@@ -58,15 +72,22 @@ graph.AddVertex("B")
 graph.AddVertex("C")
 graph.AddVertex("D")
 graph.AddVertex("E")
+graph.AddVertex("F")
+graph.AddVertex("G")
 
 graph.Addegde("A","B")
-graph.Addegde("A","C")
 graph.Addegde("A","D")
+graph.Addegde("A","C")
 graph.Addegde("B","E")
+graph.Addegde("C","F")
+graph.Addegde("D","E")
+graph.Addegde("E","F")
+graph.Addegde("E","G")
 graph.PrintGraph()
-graph.removeEdge("A","E")
+# graph.removeEdge("A","E")
 graph.PrintGraph()
-graph.removevertex("A")
-print("After removing vertex A")
+# graph.removevertex("A")
+# print("After removing vertex A")
 graph.PrintGraph()
+print("BFS Traversal",graph.BFS("G"))
 
