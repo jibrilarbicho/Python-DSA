@@ -5,7 +5,7 @@
 #         for start,end in self.edges:
 #             if start in  self.graph:
 #                 self.graph[start].append(end)
-#                 pass
+#                 
 #             else:
 #                 self.graph[start]=[end]
 
@@ -58,7 +58,7 @@ class Graph:
         while queue:
             currentvertex=queue.pop(0)
             for vertex in self.graph_dictionary[currentvertex]:
-                if vertex not in visited:
+                if vertex not in visited and vertex not in queue:
                     visited.append(vertex)
                     queue.append(vertex)
         return visited
@@ -67,13 +67,12 @@ class Graph:
         Stack=[vertex]
         while Stack:
             currentvertex=Stack.pop()
-            if currentvertex not in visited:
-                print(currentvertex)
-                visited.add(currentvertex)
+            print(currentvertex)
+            visited.add(currentvertex)
 
 
             for othervetex in self.graph_dictionary[currentvertex]:
-                if othervetex not in visited:
+                if othervetex not in visited and othervetex not in Stack:
                     Stack.append(othervetex)
         return visited
         
@@ -106,7 +105,7 @@ graph.PrintGraph()
 # graph.removevertex("A")
 # print("After removing vertex A")
 graph.PrintGraph()
-# print("BFS Traversal",graph.BFS("G"))
+print("BFS Traversal",graph.BFS("G"))
 print("DFS Traversal",graph.DFS("G"))
 
 
