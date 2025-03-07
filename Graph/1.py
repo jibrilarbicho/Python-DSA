@@ -13,7 +13,7 @@ class Graph:
             path=queue.pop(0)
             if end==path[-1]:
                 return path
-            for adjecent in self.dict[path[-1]]:
+            for adjecent in self.dict.get(path[-1],[]):
                 newpath=list(path)
                 newpath.append(adjecent)
                 queue.append(newpath)

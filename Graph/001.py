@@ -106,6 +106,6 @@ graph.PrintGraph()
 # print("After removing vertex A")
 graph.PrintGraph()
 print("BFS Traversal",graph.BFS("G"))
-print("DFS Traversal",graph.DFS("G"))
+print("DFS Traversal",graph.DFS("A"))
 
 
